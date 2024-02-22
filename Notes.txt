@@ -1,0 +1,63 @@
+# Build an Expense Tracker
+# MERN Project
+# REST API
+
+Frontend Elements
+- Login Page / Login with mail
+- Signup Page
+
+Home Page / Dashboard
+- yearly / Monthly Expense Element Navigate to left Slide
+- Default Page / Home Page 
+    - Enter an Expense
+    - Expense Graph?
+    - Description of Expense
+    - Types of expense 
+        - groceries
+        - Tech
+        - Food
+        - Cosmetics
+
+    - Add button
+    - Display 
+
+- Previous Month Expense
+    - Graph? // for later
+    - All Expense List Month
+    - Month Status - Expenses Down and Ups // for later
+
+
+
+Backend Elements
+
+Operations
+- ADD an expense  [Expense Title] [Description] [X](delete button)/(add button) 
+- Delete an expense
+- Change Description of expense
+
+Routes
+Schemas
+- User Schema
+- Expense Schema -> amount (currency) (INR, USD ...)
+                 -> Description (NLP Model?)
+		 -> Expense Type - (groceries, Tech, Food, Styling etc)(Assigned with discription)
+
+
+
+
+
+User Authentication: Allow users to register and log in securely to their accounts. This feature ensures that each user has a personalized experience and can securely access their expense data.
+
+Expense Management: Provide functionality for users to add, edit, and delete their expenses. Users should be able to categorize expenses, add descriptions, and specify the amount spent.
+
+Dashboard:summary charts, graphs, or tables displaying spending patterns, trends, and total expenses over time.
+
+Budget Tracking: 
+Transaction History:
+Notifications and Reminders:
+Reports and Analytics: 
+Data Synchronization:
+Settings and Preferences:
+Data Export: CSV or PDF
+Security:
+Feedback and Support: Include features for users to provide feedback, report issues, or request assistance. This helps improve the application and provides users with a channel to get help when needed.
