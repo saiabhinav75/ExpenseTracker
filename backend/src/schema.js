@@ -5,6 +5,7 @@ require('dotenv').config()
 const uri = process.env.MONGO_URI;
 // console.log(uri)
 mongoose.connect(uri)
+.then((res)=>console.log('MongoDB Connected'))
 .catch((err)=>console.log(err))
 
 const UserSchema = new mongoose.Schema({

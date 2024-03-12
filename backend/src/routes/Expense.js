@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {User,Expenses} = require('../src/schema');
+const {User,Expenses} = require('../schema');
 
 
 const {authMiddleware} = require('../middleware/AuthMiddle')
@@ -22,7 +22,6 @@ router.post('/addExpense',authMiddleware,async (req,res)=>{
 
 router.get('/allExpenses',authMiddleware,async (req,res)=>{
     const userId = req.userId;
-    // console.log(userId)
     const data = await Expenses.find({userId});
     console.log(data);
     return res.json(data)

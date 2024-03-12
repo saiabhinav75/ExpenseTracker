@@ -1,21 +1,24 @@
 const express = require('express')
 const router = express.Router()
 
-const { User,Expense } = require('../src/schema')
+const { User,Expense } = require('../schema')
 const jwt = require('jsonwebtoken')
-const {JWT_SECRET} = require('../config')
+const {JWT_SECRET} = require('../../config')
 
 
 router.post("/", async (req,res) =>{
-    console.log(req.body)
-    const {username,password,name} = req.body
-    if(!username || !password || !name){
+    const username = req.body.username;
+    const password= req.body.password;
+    const name= req.body.name;
+
+    if(username==undefined || password==undefined || name==undefined){
+        console.log(username,password,name)
         return res.status(411).json({
             message:"Incorrect credentials"
         })
     }
     const existingUser = await User.findOne({
-        username : req.body.username
+        username : username
     })
     if(existingUser){
         return res.status(411).json({
@@ -32,7 +35,7 @@ router.post("/", async (req,res) =>{
     const token = jwt.sign({
         userId
     },JWT_SECRET);
-    res.json({
+    return res.json({
         message: "User created successfully",
         token : token
     })
